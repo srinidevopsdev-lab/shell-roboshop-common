@@ -7,6 +7,5 @@ check_root
 app_setup
 python_setup
 systemd_setup
-
-app_restart
+app_restarted
 print_total_time
