@@ -93,7 +93,7 @@ systemd_setup() {
 }
 
 app_restarted(){
-    systemctl restart $app_name 
+    systemctl restart $app_name  &>>$LOG_FILE
     VALIDATE $? "Restarting $app_name"
 }
 print_total_time() {
