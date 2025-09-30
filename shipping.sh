@@ -22,3 +22,4 @@ fi
 VALIDATE $? "Installing mysql client"
 
 app_restarted
+print_total_time

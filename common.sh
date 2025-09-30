@@ -52,6 +52,12 @@ java_setup(){
     mv target/shipping-1.0.jar shipping.jar &>>$LOG_FILE
     VALIDATE $? "unzip shipping content"
 }
+python_setup(){
+    dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+    VALIDATE $? "Installing Python3"
+    pip3 install -r requirements.txt &>>$LOG_FILE
+    VALIDATE $? "Installing dependencies"
+}
 app_setup() {
     id roboshop 
     if [ $? -ne 0 ]; then    
