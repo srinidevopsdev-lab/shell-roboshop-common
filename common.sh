@@ -11,6 +11,7 @@ SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME.log
 START_TIME=$(date +%s)
 SCRIPT_DIR=$PWD
+MYSQL_HOST="mysql.srinivasa.fun"
 MONGODB_HOST=mongodb.srinivasa.fun
 mkdir -p $LOGS_FOLDER
 echo "script started executed at: $(date)" | tee -a $LOG_FILE
