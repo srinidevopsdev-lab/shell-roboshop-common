@@ -10,7 +10,7 @@ LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE=$LOGS_FOLDER/$SCRIPT_NAME.log
 START_TIME=$(date +%s)
-SCRIPT_DIR=$pwd
+SCRIPT_DIR=$PWD
 MONGODB_HOST=mongodb.srinivasa.fun
 mkdir -p $LOGS_FOLDER
 echo "script started executed at: $(date)" | tee -a $LOG_FILE
@@ -24,7 +24,7 @@ check_root(){
 
 VALIDATE () {
     if [ $1 -ne 0 ]; then
-        echo "Error: $2 ... $R failure $N" | tee -a $LOG_FILE
+        echo -e "Error: $2 ... $R failure $N" | tee -a $LOG_FILE
         exit 1 # 1 for failure
     else
         echo -e "$2 ... $G successful $N" | tee -a $LOG_FILE
